@@ -198,20 +198,20 @@ classDiagram
 Here are the visual interfaces of the various roles and flows:
 
 ### 1. Customer Escrow & OTP Screen
-The Customer Escrow page shows the active funds protected in the secure vault, alongside the animated, springy 6-digit OTP cards generated when the driver arrives.
+The Customer Escrow page shows the active funds protected in the secure vault, alongside the animated 6-digit OTP cards generated for the driver.
 
-![Customer Escrow & OTP Card](docs/images/media__1784391517749.png)
+![Customer Escrow & OTP Card](docs/images/media__1784394450952.png)
 
-### 2. Driver Delivery Portal
-The Driver Portal shows assigned deliveries, mapping active escrows (`ESC-DEMO-001` and `ESC-DEMO-002`) and prompting OTP verification at the doorstep.
+### 2. Driver Delivery Portal & Verification
+The Driver Portal displays active assigned deliveries, prompting for OTP verification to complete the delivery and release funds.
 
-![Driver Delivery Portal](docs/images/media__1784391530703.png)
+![Driver Delivery Portal](docs/images/media__1784394457285.png)
+![Driver OTP Verification Popup](docs/images/media__1784394453942.png)
 
-### 3. Super Admin & System Dashboards
-The central command console showing metrics, active settlements, and overall platform statistics.
+### 3. Super Admin & System Dashboard
+The central command console showing live metrics, order trends, escrow distributions, fraud risk logs, and system events.
 
-![Super Admin Overview](docs/images/media__1784386226620.png)
-![AI Analytics Dashboard](docs/images/media__1784386313228.png)
+![Super Admin Overview](docs/images/media__1784394390654.png)
 
 ---
 
