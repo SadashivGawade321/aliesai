@@ -35,7 +35,7 @@ This will automatically:
 Double-click:  start.bat
 ```
 
-Wait ~30 seconds, then open: **http://localhost:3000**
+
 
 ### Step 4 — Log In
 
