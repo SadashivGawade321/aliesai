@@ -48,17 +48,15 @@ Wait ~30 seconds, then open: **http://localhost:3000**
 
 ---
 
-## 🏗️ What's Running
+## 🏗️ System Services Registry & Communication Flow
 
-After `start.bat`, you'll have 3 services running:
+Instead of relying on hardcoded localhost links, AegisPay AI dynamically maps its internal nodes using standardized environment variables. The communication hierarchy is outlined below:
 
-| Service | URL | What it does |
-|---------|-----|-------------|
-| **Frontend** | http://localhost:3000 | The web app you interact with |
-| **Backend API** | http://localhost:4000 | Handles all business logic |
-| **API Docs** | http://localhost:4000/api/docs | Swagger API documentation |
-| **AI Service** | http://localhost:8000 | Fraud & trust AI |
-| **AI Docs** | http://localhost:8000/docs | AI service documentation |
+| Service Node | Service Port | Protocol & Dynamic Interface |
+|--------------|--------------|-------------------------------|
+| **Next.js Web Gateway** | Client side port mapping | Serves responsive CSS/React states, fetches and displays live graphs, and provides user dashboards. |
+| **NestJS API Core** | Server side controller port | Manages user authorization, writes to MongoDB collections, and schedules transaction events. |
+| **FastAPI ML Node** | AI inference controller port | Computes fraud risk scores via XGBoost models and evaluates dispute evidence in milliseconds. |
 
 ---
 
