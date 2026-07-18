@@ -62,6 +62,45 @@ After `start.bat`, you'll have 3 services running:
 
 ---
 
+## 📊 Informative System Tech Stack & Components
+
+AegisPay AI utilizes a modern, distributed microservices architecture designed to guarantee low latency, real-time safety checks, and secure, atomic transactions.
+
+```
++---------------------------+       HTTP        +---------------------------+
+|    Next.js 14 Web App     | <===============> |    NestJS API Service     |
+|   (React 19 & Tailwind)   |                   |  (Clean Architecture/DDD) |
++---------------------------+                   +---------------------------+
+              ^                                               ||
+              |                                               || HTTP Sync
+              |                                               \/
++---------------------------+                   +---------------------------+
+|    MongoDB Database       | <================ |   Python FastAPI Engine   |
+| (Mongoose Schemas & Refs) |                   |  (XGBoost ML Classification)|
++---------------------------+                   +---------------------------+
+```
+
+### 💻 Component Architecture Breakdown
+
+#### 1. Next.js 14 Web Application (`apps/web`)
+- **Core Technologies**: Next.js 14, React 19, TypeScript, Tailwind CSS, Framer Motion.
+- **Client State**: Powered by **Zustand** for global authentication states and session persistence.
+- **Server Cache & Sync**: Managed by **TanStack Query** (React Query) to handle seamless queries, cache invalidations, and real-time polling on dashboards.
+- **UX & Micro-interactions**: Features a dark-mode glassmorphic interface, smooth animation transitions via Framer Motion, and autofocus textboxes for OTP verification.
+
+#### 2. NestJS Core API Engine (`apps/api`)
+- **Core Technologies**: Node.js, TypeScript, NestJS, Mongoose.
+- **Design Pattern**: Domain-Driven Design (DDD) with a clean layered architecture separating REST Controller paths, transactional Services, and database entities.
+- **Event-Driven Architecture**: Uses NestJS `EventEmitter2` module to handle reputation modifications, audit log writing, and telemetry tracking in a non-blocking, decoupled way.
+- **Database Model**: MongoDB database with Mongoose ODM modeling strict entity collections and state transitions.
+
+#### 3. Python AI Microservice (`apps/ai-service`)
+- **Core Technologies**: Python 3.11+, FastAPI, Uvicorn, XGBoost, Scikit-Learn.
+- **Machine Learning Inference**: Serves real-time predictions for transaction fraud classification and explainable dispute resolution.
+- **Communication Protocol**: NestJS API queries FastAPI via REST APIs synchronously during critical paths (e.g. order creation) to block fraud in less than 20 milliseconds.
+
+---
+
 ## 🔄 End-to-End Workflow
 
 This activity diagram illustrates the step-by-step transaction flow, showing how payment locks in escrow, runs through real-time AI fraud checks, transitions to delivery, and settles securely via customer-generated OTP verification.
