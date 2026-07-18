@@ -1,0 +1,19 @@
+{
+  "name": "AegisPay AI",
+  "short_name": "AegisPay",
+  "description": "Programmable Trust for Every Transaction",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "categories": ["finance", "business"],
+  "shortcuts": [
+    { "name": "Dashboard", "url": "/dashboard/admin", "description": "Open dashboard" },
+    { "name": "Orders", "url": "/dashboard/customer/orders", "description": "View my orders" }
+  ]
+}

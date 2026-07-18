@@ -1,0 +1,27 @@
+{
+  "name": "aegispay-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AegisPay AI - Programmable Trust for Every Transaction",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --parallel --filter './apps/*' dev",
+    "build": "pnpm --filter './apps/*' build",
+    "lint": "pnpm --parallel --filter './apps/*' lint",
+    "test": "pnpm --parallel --filter './apps/*' test",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}
